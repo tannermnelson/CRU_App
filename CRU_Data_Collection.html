@@ -38,9 +38,9 @@
                 <option value="">Select an Operator</option>
             </select>
 
-            <label for="trooper">Trooper</label>
-            <select id="trooper" name="trooper" required>
-                <option value="">Select a Trooper</option>
+            <label for="technician">Technician</label>
+            <select id="technician" name="technician" required>
+                <option value="">Select a Technician</option>
             </select>
             
             <label for="e_mail">Email</label>
@@ -67,19 +67,30 @@
             <label for="time">Time</label>
             <input type="time" id="time" name="time" required>
 
-            <label for="site">Site</label>
-            <select id="site" name="site" required>
-                <option value="">Select a Site</option>
+            <label for="engine_make">Engine Make</label>
+            <select id="engine_make" name="engine_make" required>
+                <option value="">Select Engine Make</option>
             </select>
+
+            <label for="model_make">Engine Model</label>
+            <select id="model_make" name="model_make" required>
+                <option value="">Select Engine Model</option>
+            </select>
+            
+            <!--ensure the this added to the js script-->
+            <label for="engine_year">Engine Year</label>
+            <select id="engine_year" name="engine_year" required>
+                <option value="">Select Engine Year</option>
+            </select>            
        
-            <label for="cve500">CVE500 Number</label>
-            <input type="text" id="cve500" name="cve500" maxlength="10" required placeholder="Enter CVE500 Number">
+            <label for="inspection_number">Inspection Number</label>
+            <input type="text" id="inspection_number" name="inspection_number" maxlength="10" required placeholder="Enter Inspection Number">
 
-            <label for="citation">Citation Number</label>
-            <input type="text" id="citation" name="citation" maxlength="10" required placeholder="Enter Citation Number">
+            <label for="dmv349_report_number">DMV349 Report Number</label>
+            <input type="text" id="dmv349_report_number" name="dmv349_report_number" maxlength="10" required placeholder="Enter DMV 349 Report Number">
 
-            <label for="violations">Violations</label>
-            <select id="violations" name="violations" multiple required>
+            <label for="software_used">Software Used</label>
+            <select id="software_used" name="software_used" multiple required>
                 <option value="Seatbelt">Seatbelt</option>
                 <option value="Distracted Driving">Distracted Driving</option>
                 <option value="Other">Other</option>
