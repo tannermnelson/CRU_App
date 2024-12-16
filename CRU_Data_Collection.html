@@ -11,6 +11,7 @@
         <h1>MCSAP CMV Post-Crash Inspection Data Entry</h1>
     </div>
     <br>
+    <button id="toggleUpdateRecord" class="top-right-button">Update a Record</button>        
     <form id="userForm">
         <div id="updateRecord" style="margin-top: 30px;">
             <h2>Update Existing Record</h2>
@@ -33,6 +34,9 @@
                 To enter a new record, start here and hit "Submit Record" button at bottom.
             </p>
             
+            <label for="download_type">Download Type </label>
+            <input for="SHP Download">SHP Download</label>
+
             <label for="operator">Operator</label>
             <select id="operator" name="operator" required>
                 <option value="">Select an Operator</option>
@@ -91,18 +95,43 @@
 
             <label for="software_used">Software Used</label>
             <select id="software_used" name="software_used" multiple required>
-                <option value="Seatbelt">Seatbelt</option>
-                <option value="Distracted Driving">Distracted Driving</option>
-                <option value="Other">Other</option>
-                <option value="None">None</option>
+                <option value="Bendix">Bendix</option>
+                <option value="Cummins Insite">Cummins Insite</option>
+                <option value="Davie">Davie</option>
+                <option value="DDEC Reports">DDEC Reports</option>
+                <option value="Detroit Diagnostic Link 8">Detroit Diagnostic Link 8</option>
+                <option value="Diesel Laptops">Diesel Laptops</option>
+                <option value="FLA">FLA</option>
+                <option value="Haldex">Haldex</option>
+                <option value="Navistar">Navistar</option>
+                <option value="NEDS">NEDS</option>
+                <option value="PAACAR-Davie4">PAACAR-Davie4</option>
+                <option value="PowerSpec">PowerSpec</option>
+                <option value="V-Mac III">V-Mac III</option>
+                <option value="WABCO">WABCO</option>
             </select>
             <p style="font-size: 0.9em; color: #ffffff; margin-top: -10px;">
                 Hold down the <strong>Ctrl</strong> key (or <strong>Cmd</strong> on Mac) to select multiple options.
             </p>
-            <div id="otherViolation">
-                <label for="otherViolationsInput">Other Violations</label>
-                <input type="text" id="otherViolationsInput" name="otherViolationsInput" placeholder="Specify Other Violations">
-            </div>
+
+
+            <label for="equipment_used">Equipment Used</label>
+            <select id="equipment_used" name="equipment_used" multiple required>
+                <option value="Diesel Decoder">Diesel Decoder</option>
+                <option value="FLA">FLA</option>
+                <option value="FLA/SSS2">FLA/SSS2</option>
+                <option value="Nexiq">Nexiq</option>
+                <option value="Nexiq PLC Adapter">Nexiq PLC Adapter</option>
+                <option value="Nexiq/SSS2">Nexiq/SSS2</option>
+                <option value="Noregon Trailer Kit">Noregon Trailer Kit</option>
+            </select>
+            <p style="font-size: 0.9em; color: #ffffff; margin-top: -10px;">
+                Hold down the <strong>Ctrl</strong> key (or <strong>Cmd</strong> on Mac) to select multiple options.
+            </p>
+
+
+            <label for="notes">Notes</label>
+            <input type = "text" id="notes" name="notes">
 
             <button type="submit">Submit Record</button>
         </div>
