@@ -34,8 +34,15 @@
                 To enter a new record, start here and hit "Submit Record" button at bottom.
             </p>
             
-            <label for="download_type">Download Type </label>
-            <input for="SHP Download">SHP Download</label>
+            <input type="radio" id="SHP Download" name="download_type" value="SHP Download">
+            <label for="SHP Download">SHP Download</label>
+
+            <input type="radio" id="Allied Agency" name="download_type" value="Allied Agency">
+            <label for="Allied Agency">Allied Agency</label>
+
+            <input type="radio" id="training" name="download_type" value="training">
+            <label for="training">Training</label>
+
 
             <label for="operator">Operator</label>
             <select id="operator" name="operator" required>
