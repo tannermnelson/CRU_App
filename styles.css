@@ -78,7 +78,7 @@ select {
     content: "";
     width: 100%;
     height: 100%;
-    display: black;
+    display: block;
     background: #555555;
     border-radius: 50%;
 
