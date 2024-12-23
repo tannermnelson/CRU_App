@@ -152,18 +152,21 @@
 
            <label for="PostCrashTrailerUsed">Post-Crash Trailer Used?</label>
             <select id="PostCrashTrailerUsed" name="PostCrashTrailerUsed" required>
+                <option value="SelectValue">Select Value</option>
                 <option value="Yes">Yes</option>
                 <option value="Yes">No</option>
             </select>
 
            <label for="Warrant">Warrant Necessary?</label>
             <select id="Warrant" name="Warrant" required>
+                <option value="SelectValue">Select Value</option>
                 <option value="Yes">Yes</option>
                 <option value="Yes">No</option>
             </select>
 
            <label for="UnitType">Unit Type</label>
             <select id="UnitType" name="UnitType" required>
+                <option value="SelectValue">Select Value</option>
                 <option value="Box Truck">Box Truck</option>
                 <option value="Tractor">Tractor</option>
                 <option value="Dump Truck">Dump Truck</option>
@@ -172,7 +175,7 @@
             </select>
 
             <label for="notes">Notes</label>
-            <input type = "text" id="notes" name="notes">
+            <input type = "text" id="notes" name="notes" required placeholder="Enter Notes:">
 
             <button type="submit">Submit Record</button>
         </div>
