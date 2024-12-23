@@ -34,22 +34,13 @@
                 To enter a new record, start here and hit "Submit Record" button at bottom.
             </p>
             
-            <label for="SHP Download">SHP Download</label>
-            <input type="radio" id="SHP Download" name="download_type" value="SHP Download">
-
-            <label for="Allied Agency">Allied Agency</label>
-            <input type="radio" id="Allied Agency" name="download_type" value="Allied Agency">
-
-            <label for="training">Training</label>
-            <input type="radio" id="training" name="download_type" value="training">
-
-            <label for="myRadio" class = "radio">
-                <input type="radio" name = "myRadioField" id ="myRadioID" class= "radio__input">
-                <div class="radio__radio">
-                    <!-- virtual element -->
-                </div>
-                SHP Download
-            </label>
+           <label for="typeDownload">Download Type</label>
+            <select id="typeDownload" name="typeDownload" required>
+                <option value="">Select Download Type</option>
+                <option value="SHP Download">SHP Download</option>
+                <option value="Allied Agency">Allied Agency</option>
+                <option value="Training Download">Training Download</option>
+            </select>
 
 
             <label for="operator">Operator</label>
@@ -78,6 +69,21 @@
                 <option value="H">H</option>
                 <option value="I">I</option>
                 <option value="X">X</option>
+            </select>
+
+
+           <label for="district">District</label>
+            <select id="district" name="district" required>
+                <option value="">Select District</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
             </select>
 
             <label for="date">Date</label>
@@ -144,6 +150,26 @@
                 Hold down the <strong>Ctrl</strong> key (or <strong>Cmd</strong> on Mac) to select multiple options.
             </p>
 
+           <label for="PostCrashTrailerUsed">Post-Crash Trailer Used?</label>
+            <select id="PostCrashTrailerUsed" name="PostCrashTrailerUsed" required>
+                <option value="Yes">Yes</option>
+                <option value="Yes">No</option>
+            </select>
+
+           <label for="Warrant">Warrant Necessary?</label>
+            <select id="Warrant" name="Warrant" required>
+                <option value="Yes">Yes</option>
+                <option value="Yes">No</option>
+            </select>
+
+           <label for="UnitType">Unit Type</label>
+            <select id="UnitType" name="UnitType" required>
+                <option value="Box Truck">Box Truck</option>
+                <option value="Tractor">Tractor</option>
+                <option value="Dump Truck">Dump Truck</option>
+                <option value="Trailer">Trailer</option>
+                <option value="School Bus">School Bus</option>
+            </select>
 
             <label for="notes">Notes</label>
             <input type = "text" id="notes" name="notes">
