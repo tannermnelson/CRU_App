@@ -144,7 +144,7 @@ document.getElementById('fetchRecord').addEventListener('click', function() {
 				document.getElementById('unit_type').value = data.unit_type;	
 				document.getElementById('notes').value = data.notes;	
 				document.getElementById('download_type').value = data.download_type;	
-				document.getElementById('district').value = data.district;	
+				document.getElementById('district').value = data.district;
 
 
 				const equipment = data.equipment; // Assume this is an array
@@ -153,14 +153,12 @@ document.getElementById('fetchRecord').addEventListener('click', function() {
 					option.selected = violations.includes(option.value);
 				});
 
-				const violations = data.violations; // Assume this is an array
-				const violationsSelect = document.getElementById('violations');
-				Array.from(violationsSelect.options).forEach(option => {
-					option.selected = violations.includes(option.value);
+				const software = data.software; // Assume this is an array
+				const softwareSelect = document.getElementById('software');
+				Array.from(softwareSelect.options).forEach(option => {
+					option.selected = software.includes(option.value);
 				});
 
-				// Populate other violations if any
-				document.getElementById('otherViolationsInput').value = data.other_violations || '';
 				//console.log('other_violations:', data.other_violations);
 				
 				alert('Record found for the provided Inspection Number and Email.');
@@ -177,19 +175,30 @@ document.getElementById('userForm').addEventListener('submit', function(event) {
 	event.preventDefault();
 	
 	const operator = document.getElementById('operator').value;
-	const trooper = document.getElementById('trooper').value;
+	const technician = document.getElementById('technician').value;
 	const e_mail = document.getElementById('e_mail').value;
 	const troop = document.getElementById('troop').value;
+	const district = document.getElementById('district').value;
 	const date = document.getElementById('date').value;
 	const time = document.getElementById('time').value;
-	const site = document.getElementById('site').value;
-	const cve500 = document.getElementById('cve500').value;
-	const citation = document.getElementById('citation').value.trim();
-	const violations = Array.from(document.getElementById('violations').selectedOptions).map(opt => opt.value);
-	const otherViolations = document.getElementById('otherViolationsInput').value; // Include other violations
-	
+	const inspection_number = document.getElementById('inspection_number').value;
+	const dmv349_report_number = document.getElementById('dmv349_report_number').value;
+	const equipment = Array.from(document.getElementById('equipment').selectedOptions).map(opt => opt.value);
+	const software = Array.from(document.getElementById('software').selectedOptions).map(opt => opt.value);
+	const warrant = document.getElementById('warrant').value;
+	const unit_type = document.getElementById('unit_type').value;
+	const download_type = document.getElementById('download_type').value;
+	const notes = document.getElementById('notes').value;
+	const post_crash_trailer_used = document.getElementById('post_crash_trailer_used').value;
+	const engine_make = document.getElementById('engine_make').value;
+	const engine_model = document.getElementById('engine_model').value;
+	const engine_year = document.getElementById('engine_year').value;
+
+
+
+
 	// Validate the form fields
-	if (!operator || !trooper || !e_mail || !troop || !date || !time || !site || !cve500 || !citation || !violations) {
+	if (!operator || !trooper || !e_mail || !troop || !date || !time || !district || !inspection_number || !dmv349_report_number || !equipment || !software || !engine_make || !engine_model || !engine_year || !warrant || !unit_type || !download_type || !notes || !post_crash_trailer_used || !) {
 		alert('Please fill in all required fields.');
 		return; // Exit if any field is empty
 	}
@@ -210,16 +219,24 @@ document.getElementById('userForm').addEventListener('submit', function(event) {
 	// Prepare the form data for submission
 	const formData = {
 		operator,
-		trooper,
+		technician,
 		e_mail,
 		troop,
+		district,
 		date,
 		time,
-		site,
-		cve500,
-		citation,
-		violations,
-		otherViolations,
+		inspection_number,
+		dmv349_report_number,
+		equipment,
+		software,
+		engine_make,
+		engine_model,
+		engine_year,
+		post_crash_trailer_used,
+		unit_type,
+		download_type,
+		warrant,
+		notes
 	};
 	
 	// Post the record to the database
@@ -238,7 +255,6 @@ document.getElementById('userForm').addEventListener('submit', function(event) {
 
 		// Clear the form upon successful submission
 		document.getElementById('userForm').reset();
-		document.getElementById('otherViolation').style.display = 'none'; // Hide the other violations input
 
 		// Refresh the page after submission
 		window.location.reload();
