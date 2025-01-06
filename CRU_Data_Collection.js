@@ -1,96 +1,96 @@
-	document.addEventListener('DOMContentLoaded', function() {
-	// Fetch both sites and troopers data
-	fetch('https://hmrvhhu9r0.execute-api.us-east-2.amazonaws.com/getLists')
-		.then(response => response.json())
-		.then(data => {
-			//console.log('Fetched data:', data);  // Debug: Check the fetched data
-			
-			// Handle engine make data
-			const engine_makeSelect = document.getElementById('engine_make');
-			if (data.engine && data.engine.length > 0) {
-				data.engine_makes.forEach(engine_make => {
-					const option = document.createElement('option');
-					option.value = engine_make.engine_make; // Get the 'site' field
-					option.textContent = engine_make.engine_make; // Display the site name
-					engine_makeSelect.appendChild(option);
-				});
-			} else {
-				console.error('No engine makes data available');
-			}
-
-			// Handle engine model data
-			const engine_modelSelect = document.getElementById('engine_model');
-			if (data.model && data.model.length > 0) {
-				data.engine_models.forEach(engine_model => {
-					const option = document.createElement('option');
-					option.value = engine_model.engine_model; // Get the 'site' field
-					option.textContent = engine_model.engine_model; // Display the site name
-					engine_modelSelect.appendChild(option);
-				});
-			} else {
-				console.error('No engine models data available');
-			}
-
-			const yearList = document.getElementById('engine_year');
-			for (let year = 1990; year <= 2024; year++){
-				const listItem = document.createElement('li');
-				listItem.textContent = year;
-
-				yearList.appendChild(listItem);
-			}
-
-			// Handle troopers data for both "Trooper" and "Operator" dropdowns
-			const technicianSelects = document.querySelectorAll('technician'); // Select both dropdowns with id="trooper" and id="operator"
-			if (data.techncian && data.technician.length > 0) {
-				data.techncian.forEach(technician => {
-					const option = document.createElement('option');
-					option.value = technician.technician; // Get the 'trooper' field
-					option.textContent = technician.technician; // Display the trooper name
-					
-					// Append the option to each select dropdown
-					technicainSelects.forEach(select => {
-						select.appendChild(option.cloneNode(true)); // Clone option for each dropdown
-					});
-				});
-			} else {
-				console.error('No technician data available');
-			}
-
-			const operatorSelects = document.querySelectorAll('operator'); // Select both dropdowns with id="trooper" and id="operator"
-			if (data.operator && data.operator.length > 0) {
-				data.operator.forEach(operator => {
-					const option = document.createElement('option');
-					option.value = operator.operator; // Get the 'trooper' field
-					option.textContent = operator.operator; // Display the trooper name
-					
-					// Append the option to each select dropdown
-					operatorSelects.forEach(select => {
-						select.appendChild(option.cloneNode(true)); // Clone option for each dropdown
-					});
-				});
-			} else {
-				console.error('No operator data available');
-			}
-
-
-		})
-		.catch(error => {
-			console.error('Error fetching data:', error);
-			const engineSelect = document.getElementById('engine_make');
-			engineSelect.innerHTML = '<option>Error loading engine makes</option>';
-
-			const modelSelect = document.getElementById('model_make');
-			modelSelect.innerHTML = '<option>Error loading model makes</option>';
-
-			const operatorSelect = document.getElementById('operator');
-			operatorSelect.innerHTML = '<option>Error loading operators</option>';
-
-			const technicianSelects = document.querySelectorAll('technician'); // Select both dropdowns
-			technicianSelects.forEach(select => {
-				select.innerHTML = '<option>Error loading technicians</option>';
+document.addEventListener('DOMContentLoaded', function() {
+// Fetch both sites and troopers data
+fetch('https://hmrvhhu9r0.execute-api.us-east-2.amazonaws.com/getLists')
+	.then(response => response.json())
+	.then(data => {
+		//console.log('Fetched data:', data);  // Debug: Check the fetched data
+		
+		// Handle engine make data
+		const engine_makeSelect = document.getElementById('engine_make');
+		if (data.engine && data.engine.length > 0) {
+			data.engine_makes.forEach(engine_make => {
+				const option = document.createElement('option');
+				option.value = engine_make.engine_make; // Get the 'site' field
+				option.textContent = engine_make.engine_make; // Display the site name
+				engine_makeSelect.appendChild(option);
 			});
+		} else {
+			console.error('No engine makes data available');
+		}
+
+		// Handle engine model data
+		const engine_modelSelect = document.getElementById('engine_model');
+		if (data.model && data.model.length > 0) {
+			data.engine_models.forEach(engine_model => {
+				const option = document.createElement('option');
+				option.value = engine_model.engine_model; // Get the 'site' field
+				option.textContent = engine_model.engine_model; // Display the site name
+				engine_modelSelect.appendChild(option);
+			});
+		} else {
+			console.error('No engine models data available');
+		}
+
+		const yearList = document.getElementById('engine_year');
+		for (let year = 1990; year <= 2024; year++){
+			const listItem = document.createElement('li');
+			listItem.textContent = year;
+
+			yearList.appendChild(listItem);
+		}
+
+		// Handle troopers data for both "Trooper" and "Operator" dropdowns
+		const technicianSelects = document.querySelectorAll('#technician'); // Select dropdowns with id="technician"
+		if (data.technician && data.technician.length > 0) {
+			data.technician.forEach(technician => {
+				const option = document.createElement('option');
+				option.value = technician.technician; // Get the 'technician' field
+				option.textContent = technician.technician; // Display the technician name
+				
+				// Append the option to each select dropdown
+				technicianSelects.forEach(select => {
+					select.appendChild(option.cloneNode(true)); // Clone option for each dropdown
+				});
+			});
+		} else {
+			console.error('No technician data available');
+		}
+
+		const operatorSelects = document.querySelectorAll('#operator'); // Select dropdowns with id="operator"
+		if (data.operator && data.operator.length > 0) {
+			data.operator.forEach(operator => {
+				const option = document.createElement('option');
+				option.value = operator.operator; // Get the 'operator' field
+				option.textContent = operator.operator; // Display the operator name
+				
+				// Append the option to each select dropdown
+				operatorSelects.forEach(select => {
+					select.appendChild(option.cloneNode(true)); // Clone option for each dropdown
+				});
+			});
+		} else {
+			console.error('No operator data available');
+		}
+
+
+	})
+	.catch(error => {
+		console.error('Error fetching data:', error);
+		const engineSelect = document.getElementById('engine_make');
+		engineSelect.innerHTML = '<option>Error loading engine makes</option>';
+
+		const modelSelect = document.getElementById('model_make');
+		modelSelect.innerHTML = '<option>Error loading model makes</option>';
+
+		const operatorSelect = document.getElementById('operator');
+		operatorSelect.innerHTML = '<option>Error loading operators</option>';
+
+		const technicianSelects = document.querySelectorAll('technician'); // Select both dropdowns
+		technicianSelects.forEach(select => {
+			select.innerHTML = '<option>Error loading technicians</option>';
 		});
 	});
+});
 
 // JavaScript to toggle the visibility of the Update Existing Record section
 document.getElementById('toggleUpdateRecord').addEventListener('click', function () {
@@ -149,8 +149,8 @@ document.getElementById('fetchRecord').addEventListener('click', function() {
 
 				const equipment = data.equipment; // Assume this is an array
 				const equipmentSelect = document.getElementById('equipment');
-				Array.from(violationsSelect.options).forEach(option => {
-					option.selected = violations.includes(option.value);
+				Array.from(equipmentSelect.options).forEach(option => {
+					option.selected = equipment.includes(option.value);
 				});
 
 				const software = data.software; // Assume this is an array
@@ -210,9 +210,9 @@ document.getElementById('userForm').addEventListener('submit', function(event) {
 		return; // Exit if email format is invalid
 	}
 	
-	// Validate cve500 format
-	if (!/^\d{7}$/.test(cve500)) {
-		alert('The CVE500 field must be exactly 7 digits.');
+	// Validate inspection number format
+	if (!/^\d{7}$/.test(inspection_number)) {
+		alert('The Inspection Number field must be exactly 7 digits.');
 		return; // Exit if validation fails
 	}
 	
