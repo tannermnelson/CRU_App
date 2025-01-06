@@ -1,5 +1,32 @@
 document.addEventListener('DOMContentLoaded', function() {
 // Fetch both sites and troopers data
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 fetch('https://hmrvhhu9r0.execute-api.us-east-2.amazonaws.com/getLists')
 	.then(response => response.json())
 	.then(data => {
@@ -32,11 +59,12 @@ fetch('https://hmrvhhu9r0.execute-api.us-east-2.amazonaws.com/getLists')
 		}
 
 		const yearList = document.getElementById('engine_year');
-		for (let year = 1990; year <= 2024; year++){
-			const listItem = document.createElement('li');
-			listItem.textContent = year;
+		for (let year = 1990; year <= new Date().getFullYear(); year++){
+			const option = document.createElement('option');
+			option.value = year;
+			option.textContent = year;
 
-			yearList.appendChild(listItem);
+			yearList.appendChild(option);
 		}
 
 		// Handle troopers data for both "Trooper" and "Operator" dropdowns
@@ -79,7 +107,7 @@ fetch('https://hmrvhhu9r0.execute-api.us-east-2.amazonaws.com/getLists')
 		const engineSelect = document.getElementById('engine_make');
 		engineSelect.innerHTML = '<option>Error loading engine makes</option>';
 
-		const modelSelect = document.getElementById('model_make');
+		const modelSelect = document.getElementById('engine_model');
 		modelSelect.innerHTML = '<option>Error loading model makes</option>';
 
 		const operatorSelect = document.getElementById('operator');
