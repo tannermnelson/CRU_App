@@ -10,115 +10,98 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-fetch('https://hmrvhhu9r0.execute-api.us-east-2.amazonaws.com/getLists')
-	.then(response => response.json())
-	.then(data => {
-		//console.log('Fetched data:', data);  // Debug: Check the fetched data
+// fetch('https://hmrvhhu9r0.execute-api.us-east-2.amazonaws.com/getLists')
+// 	.then(response => response.json())
+// 	.then(data => {
+// 		//console.log('Fetched data:', data);  // Debug: Check the fetched data
 		
-		// Handle engine make data
-		const engine_makeSelect = document.getElementById('engine_make');
-		if (data.engine && data.engine.length > 0) {
-			data.engine_makes.forEach(engine_make => {
-				const option = document.createElement('option');
-				option.value = engine_make.engine_make; // Get the 'site' field
-				option.textContent = engine_make.engine_make; // Display the site name
-				engine_makeSelect.appendChild(option);
-			});
-		} else {
-			console.error('No engine makes data available');
-		}
+// 		// Handle engine make data
+// 		// const engine_makeSelect = document.getElementById('engine_make');
+// 		// if (data.engine && data.engine.length > 0) {
+// 		// 	data.engine_makes.forEach(engine_make => {
+// 		// 		const option = document.createElement('option');
+// 		// 		option.value = engine_make.engine_make; // Get the 'site' field
+// 		// 		option.textContent = engine_make.engine_make; // Display the site name
+// 		// 		engine_makeSelect.appendChild(option);
+// 		// 	});
+// 		// } else {
+// 		// 	console.error('No engine makes data available');
+// 		// }
 
-		// Handle engine model data
-		const engine_modelSelect = document.getElementById('engine_model');
-		if (data.model && data.model.length > 0) {
-			data.engine_models.forEach(engine_model => {
-				const option = document.createElement('option');
-				option.value = engine_model.engine_model; // Get the 'site' field
-				option.textContent = engine_model.engine_model; // Display the site name
-				engine_modelSelect.appendChild(option);
-			});
-		} else {
-			console.error('No engine models data available');
-		}
+// 		// // Handle engine model data
+// 		// const engine_modelSelect = document.getElementById('engine_model');
+// 		// if (data.model && data.model.length > 0) {
+// 		// 	data.engine_models.forEach(engine_model => {
+// 		// 		const option = document.createElement('option');
+// 		// 		option.value = engine_model.engine_model; // Get the 'site' field
+// 		// 		option.textContent = engine_model.engine_model; // Display the site name
+// 		// 		engine_modelSelect.appendChild(option);
+// 		// 	});
+// 		// } else {
+// 		// 	console.error('No engine models data available');
+// 		// }
 
-		const yearList = document.getElementById('engine_year');
-		for (let year = 1990; year <= new Date().getFullYear(); year++){
-			const option = document.createElement('option');
-			option.value = year;
-			option.textContent = year;
+// 		// const yearList = document.getElementById('engine_year');
+// 		// for (let year = 1990; year <= new Date().getFullYear(); year++){
+// 		// 	const option = document.createElement('option');
+// 		// 	option.value = year;
+// 		// 	option.textContent = year;
 
-			yearList.appendChild(option);
-		}
+// 		// 	yearList.appendChild(option);
+// 		// }
 
-		// Handle troopers data for both "Trooper" and "Operator" dropdowns
-		const technicianSelects = document.querySelectorAll('#technician'); // Select dropdowns with id="technician"
-		if (data.technician && data.technician.length > 0) {
-			data.technician.forEach(technician => {
-				const option = document.createElement('option');
-				option.value = technician.technician; // Get the 'technician' field
-				option.textContent = technician.technician; // Display the technician name
+// 		// // Handle troopers data for both "Trooper" and "Operator" dropdowns
+// 		// const technicianSelects = document.querySelectorAll('#technician'); // Select dropdowns with id="technician"
+// 		// if (data.technician && data.technician.length > 0) {
+// 		// 	data.technician.forEach(technician => {
+// 		// 		const option = document.createElement('option');
+// 		// 		option.value = technician.technician; // Get the 'technician' field
+// 		// 		option.textContent = technician.technician; // Display the technician name
 				
-				// Append the option to each select dropdown
-				technicianSelects.forEach(select => {
-					select.appendChild(option.cloneNode(true)); // Clone option for each dropdown
-				});
-			});
-		} else {
-			console.error('No technician data available');
-		}
+// 		// 		// Append the option to each select dropdown
+// 		// 		technicianSelects.forEach(select => {
+// 		// 			select.appendChild(option.cloneNode(true)); // Clone option for each dropdown
+// 		// 		});
+// 		// 	});
+// 		// } else {
+// 		// 	console.error('No technician data available');
+// 		// }
 
-		const operatorSelects = document.querySelectorAll('#operator'); // Select dropdowns with id="operator"
-		if (data.operator && data.operator.length > 0) {
-			data.operator.forEach(operator => {
-				const option = document.createElement('option');
-				option.value = operator.operator; // Get the 'operator' field
-				option.textContent = operator.operator; // Display the operator name
+// 		// const operatorSelects = document.querySelectorAll('#operator'); // Select dropdowns with id="operator"
+// 		// if (data.operator && data.operator.length > 0) {
+// 		// 	data.operator.forEach(operator => {
+// 		// 		const option = document.createElement('option');
+// 		// 		option.value = operator.operator; // Get the 'operator' field
+// 		// 		option.textContent = operator.operator; // Display the operator name
 				
-				// Append the option to each select dropdown
-				operatorSelects.forEach(select => {
-					select.appendChild(option.cloneNode(true)); // Clone option for each dropdown
-				});
-			});
-		} else {
-			console.error('No operator data available');
-		}
+// 		// 		// Append the option to each select dropdown
+// 		// 		operatorSelects.forEach(select => {
+// 		// 			select.appendChild(option.cloneNode(true)); // Clone option for each dropdown
+// 		// 		});
+// 		// 	});
+// 		// } else {
+// 		// 	console.error('No operator data available');
+// 		// }
 
 
-	})
-	.catch(error => {
-		console.error('Error fetching data:', error);
-		const engineSelect = document.getElementById('engine_make');
-		engineSelect.innerHTML = '<option>Error loading engine makes</option>';
+// 	})
+// 	.catch(error => {
+// 		console.error('Error fetching data:', error);
+// 		const engineSelect = document.getElementById('engine_make');
+// 		engineSelect.innerHTML = '<option>Error loading engine makes</option>';
 
-		const modelSelect = document.getElementById('engine_model');
-		modelSelect.innerHTML = '<option>Error loading model makes</option>';
+// 		const modelSelect = document.getElementById('engine_model');
+// 		modelSelect.innerHTML = '<option>Error loading model makes</option>';
 
-		const operatorSelect = document.getElementById('operator');
-		operatorSelect.innerHTML = '<option>Error loading operators</option>';
+// 		const operatorSelect = document.getElementById('operator');
+// 		operatorSelect.innerHTML = '<option>Error loading operators</option>';
 
-		const technicianSelects = document.querySelectorAll('technician'); // Select both dropdowns
-		technicianSelects.forEach(select => {
-			select.innerHTML = '<option>Error loading technicians</option>';
-		});
-	});
-});
+// 		const technicianSelects = document.querySelectorAll('technician'); // Select both dropdowns
+// 		technicianSelects.forEach(select => {
+// 			select.innerHTML = '<option>Error loading technicians</option>';
+// 		});
+// 	});
+// });
 
 // JavaScript to toggle the visibility of the Update Existing Record section
 document.getElementById('toggleUpdateRecord').addEventListener('click', function () {
@@ -169,7 +152,7 @@ document.getElementById('fetchRecord').addEventListener('click', function() {
 				document.getElementById('dmv349_report_number').value = data.dmv349_report_number;	
 				document.getElementById('post_crash_trailer_used').value = data.post_crash_trailer_used;	
 				document.getElementById('warrant').value = data.warrant;	
-				document.getElementById('unit_type').value = data.unit_type;	
+				document.getElementById('unitType').value = data.unit_type;	
 				document.getElementById('notes').value = data.notes;	
 				document.getElementById('download_type').value = data.download_type;	
 				document.getElementById('district').value = data.district;
@@ -214,7 +197,7 @@ document.getElementById('userForm').addEventListener('submit', function(event) {
 	const equipment = Array.from(document.getElementById('equipment').selectedOptions).map(opt => opt.value);
 	const software = Array.from(document.getElementById('software').selectedOptions).map(opt => opt.value);
 	const warrant = document.getElementById('warrant').value;
-	const unit_type = document.getElementById('unit_type').value;
+	const unit_type = document.getElementById('unitType').value;
 	const download_type = document.getElementById('download_type').value;
 	const notes = document.getElementById('notes').value;
 	const post_crash_trailer_used = document.getElementById('post_crash_trailer_used').value;
