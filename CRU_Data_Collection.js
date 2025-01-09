@@ -1,15 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
 // Fetch both sites and troopers data
 
-
-
-
-
-
-
-
-
-
 	// fetch('https://hmrvhhu9r0.execute-api.us-east-2.amazonaws.com/getLists')
 	// 	.then(response => response.json())
 	// 	.then(data => {
@@ -274,6 +265,8 @@ document.addEventListener('DOMContentLoaded', function() {
 			alert('There was a problem with your submission.');
 			console.error('Error:', error);
 		});
+
+
 	});
 });
 
