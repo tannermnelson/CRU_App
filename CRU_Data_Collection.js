@@ -159,13 +159,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 					const equipment = data.equipment; // Assume this is an array
-					const equipmentSelect = document.getElementById('equipment');
+					const equipmentSelect = document.getElementById('equipment_used');
 					Array.from(equipmentSelect.options).forEach(option => {
 						option.selected = equipment.includes(option.value);
 					});
 
 					const software = data.software; // Assume this is an array
-					const softwareSelect = document.getElementById('software');
+					const softwareSelect = document.getElementById('software_used');
 					Array.from(softwareSelect.options).forEach(option => {
 						option.selected = software.includes(option.value);
 					});
