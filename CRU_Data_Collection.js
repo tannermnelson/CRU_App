@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		const inspection_number = document.getElementById('updateInspectionNumber').value;
 		const email = document.getElementById('updateEmail').value;
 
-		if (!inspection_number || !email) {
+		if (!inspection_number) {
 			alert('Please select an Inspection Number and Email Used for Initial Submission.');
 			return; // Exit early if inputs are invalid
 		}
