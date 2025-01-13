@@ -168,7 +168,7 @@ document.addEventListener('DOMContentLoaded', function() {
 					document.getElementById('troop').value = data.troop;
 					document.getElementById('engine_make').value = data.engine_make;
 					document.getElementById('engine_model').value = data.engine_model;
-					document.getElementById('engine_year').value = data.year;	
+					document.getElementById('engine_year').value = data.engine_year;	
 					document.getElementById('inspection_number').value = data.inspection_number;
 					document.getElementById('dmv349_report_number').value = data.dmv349_report_number;	
 					document.getElementById('post_crash_trailer_used').value = data.post_crash_trailer_used;	
