@@ -208,7 +208,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		
 		const operator = document.getElementById('operator').value;
 		const technician = document.getElementById('technician').value;
-		const e_mail = document.getElementById('e_mail').value;
+		const email = document.getElementById('e_mail').value;
 		const troop = document.getElementById('troop').value;
 		const district = document.getElementById('district').value;
 		const date = document.getElementById('date').value;
@@ -252,7 +252,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		const formData = {
 			operator,
 			technician,
-			e_mail,
+			email,
 			troop,
 			district,
 			date,
