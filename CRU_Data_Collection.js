@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', function() {
 					// Populate the form fields with the fetched data
 					document.getElementById('operator').value = data.operator;
 					document.getElementById('technician').value = data.technician;
-					document.getElementById('e_mail').value = data.e_mail;
+					document.getElementById('email').value = data.email;
 					document.getElementById('troop').value = data.troop;
 					document.getElementById('engine_make').value = data.engine_make;
 					document.getElementById('engine_model').value = data.engine_model;
