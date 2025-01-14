@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			return; // Exit early if inputs are invalid
 		}
 
-		spinner.style.display = 'block'; //show spinner
+		//spinner.style.display = 'block'; //show spinner
 		
 		// Fetch the existing record from the database
 		fetch(`https://hmrvhhu9r0.execute-api.us-east-2.amazonaws.com/getRecord?inspection_number=${inspection_number}&email=${encodeURIComponent(email)}`)
@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			})
 			.catch(error => console.error('Error fetching record:', error));
 
-			.finally(() => spinner.style.display = 'none'); //hide spinner
+			//.finally(() => spinner.style.display = 'none'); //hide spinner
 
 	});
 
@@ -182,7 +182,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			notes
 		};
 
-		spinner.style.display = 'block'; //show spinner
+		//spinner.style.display = 'block'; //show spinner
 		
 		// Post the record to the database
 		fetch('https://hmrvhhu9r0.execute-api.us-east-2.amazonaws.com/postRecord', {
@@ -209,7 +209,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			console.error('Error:', error);
 		});
 
-		.finally(() => spinner.style.display = 'none'); // hide spinner
+		//.finally(() => spinner.style.display = 'none'); // hide spinner
 
 	});
 });
