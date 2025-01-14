@@ -238,17 +238,17 @@ document.addEventListener('DOMContentLoaded', function() {
 		}
 
 		// Validate email format with Regular Expression (Regex)
-		const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-		if (!emailPattern.test(email)) {
-			alert('Please enter a valid email address.');
-			return; // Exit if email format is invalid
-		}
+		// const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+		// if (!emailPattern.test(email)) {
+		// 	alert('Please enter a valid email address.');
+		// 	return; // Exit if email format is invalid
+		// }
 		
 		// Validate inspection number format
-		if (!/^\d{7}$/.test(inspection_number)) {
-			alert('The Inspection Number field must be exactly 7 digits.');
-			return; // Exit if validation fails
-		}
+		// if (!/^\d{7}$/.test(inspection_number)) {
+		// 	alert('The Inspection Number field must be exactly 7 digits.');
+		// 	return; // Exit if validation fails
+		// }
 		
 		// Prepare the form data for submission
 		const formData = {
