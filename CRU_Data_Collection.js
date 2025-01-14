@@ -298,6 +298,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			console.error('Error:', error);
 		});
 
+		.finally(() => spinner.style.display = 'none');
 
 	});
 });
