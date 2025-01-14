@@ -221,6 +221,6 @@ window.onload = function() {
 	let yyyy = todayy.getFullYear();
 	let mm = String(todayy.getMonth() + 1).padStart(2, '0');
 	let dd = String(todayy.getDate()).padStart(2, '0');
-	document.getElementById('date').value = '${yyyy}-${mm}-${dd}';
+	document.getElementById('date').value = '${mm}/${dd}/${yyyy}';
 	document.getElementById('time').value = today.toTimeString().split(' ')[0].slice(0, 5);
 };
