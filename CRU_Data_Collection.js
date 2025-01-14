@@ -29,101 +29,6 @@ document.addEventListener('DOMContentLoaded', function() {
     document.head.appendChild(style);
 
 
-
-
-	// fetch('https://hmrvhhu9r0.execute-api.us-east-2.amazonaws.com/getLists')
-	// 	.then(response => response.json())
-	// 	.then(data => {
-	// 		//console.log('Fetched data:', data);  // Debug: Check the fetched data
-			
-	// 		// Handle engine make data
-	// 		// const engine_makeSelect = document.getElementById('engine_make');
-	// 		// if (data.engine && data.engine.length > 0) {
-	// 		// 	data.engine_makes.forEach(engine_make => {
-	// 		// 		const option = document.createElement('option');
-	// 		// 		option.value = engine_make.engine_make; // Get the 'site' field
-	// 		// 		option.textContent = engine_make.engine_make; // Display the site name
-	// 		// 		engine_makeSelect.appendChild(option);
-	// 		// 	});
-	// 		// } else {
-	// 		// 	console.error('No engine makes data available');
-	// 		// }
-
-	// 		// // Handle engine model data
-	// 		// const engine_modelSelect = document.getElementById('engine_model');
-	// 		// if (data.model && data.model.length > 0) {
-	// 		// 	data.engine_models.forEach(engine_model => {
-	// 		// 		const option = document.createElement('option');
-	// 		// 		option.value = engine_model.engine_model; // Get the 'site' field
-	// 		// 		option.textContent = engine_model.engine_model; // Display the site name
-	// 		// 		engine_modelSelect.appendChild(option);
-	// 		// 	});
-	// 		// } else {
-	// 		// 	console.error('No engine models data available');
-	// 		// }
-
-	// 		// const yearList = document.getElementById('engine_year');
-	// 		// for (let year = 1990; year <= new Date().getFullYear(); year++){
-	// 		// 	const option = document.createElement('option');
-	// 		// 	option.value = year;
-	// 		// 	option.textContent = year;
-
-	// 		// 	yearList.appendChild(option);
-	// 		// }
-
-	// 		// // Handle troopers data for both "Trooper" and "Operator" dropdowns
-	// 		// const technicianSelects = document.querySelectorAll('#technician'); // Select dropdowns with id="technician"
-	// 		// if (data.technician && data.technician.length > 0) {
-	// 		// 	data.technician.forEach(technician => {
-	// 		// 		const option = document.createElement('option');
-	// 		// 		option.value = technician.technician; // Get the 'technician' field
-	// 		// 		option.textContent = technician.technician; // Display the technician name
-					
-	// 		// 		// Append the option to each select dropdown
-	// 		// 		technicianSelects.forEach(select => {
-	// 		// 			select.appendChild(option.cloneNode(true)); // Clone option for each dropdown
-	// 		// 		});
-	// 		// 	});
-	// 		// } else {
-	// 		// 	console.error('No technician data available');
-	// 		// }
-
-	// 		// const operatorSelects = document.querySelectorAll('#operator'); // Select dropdowns with id="operator"
-	// 		// if (data.operator && data.operator.length > 0) {
-	// 		// 	data.operator.forEach(operator => {
-	// 		// 		const option = document.createElement('option');
-	// 		// 		option.value = operator.operator; // Get the 'operator' field
-	// 		// 		option.textContent = operator.operator; // Display the operator name
-					
-	// 		// 		// Append the option to each select dropdown
-	// 		// 		operatorSelects.forEach(select => {
-	// 		// 			select.appendChild(option.cloneNode(true)); // Clone option for each dropdown
-	// 		// 		});
-	// 		// 	});
-	// 		// } else {
-	// 		// 	console.error('No operator data available');
-	// 		// }
-
-
-	// 	})
-	// 	.catch(error => {
-	// 		console.error('Error fetching data:', error);
-	// 		const engineSelect = document.getElementById('engine_make');
-	// 		engineSelect.innerHTML = '<option>Error loading engine makes</option>';
-
-	// 		const modelSelect = document.getElementById('engine_model');
-	// 		modelSelect.innerHTML = '<option>Error loading model makes</option>';
-
-	// 		const operatorSelect = document.getElementById('operator');
-	// 		operatorSelect.innerHTML = '<option>Error loading operators</option>';
-
-	// 		const technicianSelects = document.querySelectorAll('technician'); // Select both dropdowns
-	// 		technicianSelects.forEach(select => {
-	// 			select.innerHTML = '<option>Error loading technicians</option>';
-	// 		});
-	// 	});
-	// });
-
 	// JavaScript to toggle the visibility of the Update Existing Record section
 	document.getElementById('toggleUpdateRecord').addEventListener('click', function () {
 		const updateSection = document.getElementById('updateRecord');
@@ -144,6 +49,8 @@ document.addEventListener('DOMContentLoaded', function() {
 			alert('Please select an Inspection Number and Email Used for Initial Submission.');
 			return; // Exit early if inputs are invalid
 		}
+
+		spinner.style.display = 'block'; //show spinner
 		
 		// Fetch the existing record from the database
 		fetch(`https://hmrvhhu9r0.execute-api.us-east-2.amazonaws.com/getRecord?inspection_number=${inspection_number}&email=${encodeURIComponent(email)}`)
@@ -201,6 +108,8 @@ document.addEventListener('DOMContentLoaded', function() {
 				}
 			})
 			.catch(error => console.error('Error fetching record:', error));
+
+			.finally(() => spinner.style.display = 'none'); //hide spinner
 
 	});
 
@@ -272,6 +181,8 @@ document.addEventListener('DOMContentLoaded', function() {
 			warrant,
 			notes
 		};
+
+		spinner.style.display = 'block'; //show spinner
 		
 		// Post the record to the database
 		fetch('https://hmrvhhu9r0.execute-api.us-east-2.amazonaws.com/postRecord', {
@@ -298,7 +209,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			console.error('Error:', error);
 		});
 
-		.finally(() => spinner.style.display = 'none');
+		.finally(() => spinner.style.display = 'none'); // hide spinner
 
 	});
 });
