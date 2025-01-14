@@ -141,10 +141,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 		// Validate the form fields
-		if (!operator || !trooper || !email || !troop || !date || !time || !district || !inspection_number || !dmv349_report_number || !equipment || !software || !engine_make || !engine_model || !engine_year || !warrant || !unit_type || !download_type || !notes || !post_crash_trailer_used) {
-			alert('Please fill in all required fields.');
-			return; // Exit if any field is empty
-		}
+		// if (!operator || !trooper || !email || !troop || !date || !time || !district || !inspection_number || !dmv349_report_number || !equipment || !software || !engine_make || !engine_model || !engine_year || !warrant || !unit_type || !download_type || !notes || !post_crash_trailer_used) {
+		// 	alert('Please fill in all required fields.');
+		// 	return; // Exit if any field is empty
+		// }
 
 		// Validate email format with Regular Expression (Regex)
 		// const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
