@@ -173,10 +173,12 @@ document.addEventListener('DOMContentLoaded', function() {
 					document.getElementById('dmv349_report_number').value = data.dmv349_report_number;	
 					document.getElementById('post_crash_trailer_used').value = data.post_crash_trailer_used;	
 					document.getElementById('warrant').value = data.warrant;	
-					document.getElementById('unitType').value = data.unit_type;	
+					document.getElementById('unit_type').value = data.unit_type;	
 					document.getElementById('notes').value = data.notes;	
 					document.getElementById('download_type').value = data.download_type;	
 					document.getElementById('district').value = data.district;
+					document.getElementById('date').value = data.date;
+					document.getElementById('time').value = data.time;
 
 
 					const equipment = data.equipment; // Assume this is an array
@@ -208,17 +210,17 @@ document.addEventListener('DOMContentLoaded', function() {
 		
 		const operator = document.getElementById('operator').value;
 		const technician = document.getElementById('technician').value;
-		const email = document.getElementById('e_mail').value;
+		const email = document.getElementById('email').value;
 		const troop = document.getElementById('troop').value;
 		const district = document.getElementById('district').value;
 		const date = document.getElementById('date').value;
 		const time = document.getElementById('time').value;
 		const inspection_number = document.getElementById('inspection_number').value;
 		const dmv349_report_number = document.getElementById('dmv349_report_number').value;
-		const equipment = Array.from(document.getElementById('equipment').selectedOptions).map(opt => opt.value);
-		const software = Array.from(document.getElementById('software').selectedOptions).map(opt => opt.value);
+		const equipment = Array.from(document.getElementById('equipment_used').selectedOptions).map(opt => opt.value);
+		const software = Array.from(document.getElementById('software_used').selectedOptions).map(opt => opt.value);
 		const warrant = document.getElementById('warrant').value;
-		const unit_type = document.getElementById('unitType').value;
+		const unit_type = document.getElementById('unit_type').value;
 		const download_type = document.getElementById('download_type').value;
 		const notes = document.getElementById('notes').value;
 		const post_crash_trailer_used = document.getElementById('post_crash_trailer_used').value;
