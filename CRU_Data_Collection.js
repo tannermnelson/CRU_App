@@ -217,10 +217,6 @@ document.addEventListener('DOMContentLoaded', function() {
 // Set default date and time
 window.onload = function() {
 	const today = new Date();
-	let todayy = new Date();
-	let yyyy = todayy.getFullYear();
-	let mm = String(todayy.getMonth() + 1).padStart(2, '0');
-	let dd = String(todayy.getDate()).padStart(2, '0');
-	document.getElementById('date').value = '${mm}/${dd}/${yyyy}';
+	document.getElementById('date').value = 'today.toISOString().split('T')[0]';
 	document.getElementById('time').value = today.toTimeString().split(' ')[0].slice(0, 5);
 };
