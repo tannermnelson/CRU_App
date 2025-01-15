@@ -217,6 +217,6 @@ document.addEventListener('DOMContentLoaded', function() {
 // Set default date and time
 window.onload = function() {
 	const today = new Date();
-	document.getElementById('date').value = 'today.toISOString().split('T')[0]';
+	document.getElementById('date').value = today.toISOString().split('T')[0];
 	document.getElementById('time').value = today.toTimeString().split(' ')[0].slice(0, 5);
 };
