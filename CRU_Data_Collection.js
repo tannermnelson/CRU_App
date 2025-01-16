@@ -147,11 +147,11 @@ document.addEventListener('DOMContentLoaded', function() {
 		 }
 
 		// Validate email format with Regular Expression (Regex)
-		// const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-		// if (!emailPattern.test(email)) {
-		// 	alert('Please enter a valid email address.');
-		// 	return; // Exit if email format is invalid
-		// }
+		 const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+		 if (!emailPattern.test(email)) {
+		 	alert('Please enter a valid email address.');
+		 	return; // Exit if email format is invalid
+		 }
 		
 		// Validate inspection number format
 		// if (!/^\d{7}$/.test(inspection_number)) {
