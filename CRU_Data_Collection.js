@@ -153,11 +153,17 @@ document.addEventListener('DOMContentLoaded', function() {
 		 	return; // Exit if email format is invalid
 		 }
 		
-		// Validate inspection number format
-		// if (!/^\d{7}$/.test(inspection_number)) {
-		// 	alert('The Inspection Number field must be exactly 7 digits.');
-		// 	return; // Exit if validation fails
-		// }
+		 // Validate inspection number format
+		 if (!/^\d{7}$/.test(inspection_number)) {
+		 	alert('The Inspection Number field must be exactly 7 digits.');
+		 	return; // Exit if validation fails
+		 }
+
+		 // Validate dmv number
+		 if (!/^\d{7}[A-Z]{2}$/.test(dmv349_report_number)) {
+		 	alert('The DMV Report Number must be formatted properly.')
+		 	return; // Exit if validation fails
+		 }
 		
 		// Prepare the form data for submission
 		const formData = {
