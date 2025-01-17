@@ -1,5 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
 
+	const updateSection = document.getElementById('updateRecord');
+    updateSection.style.display = 'none';
+
 	//Create and add spinner to the page
     const spinner = document.createElement('div');
     spinner.id = 'spinner';
@@ -25,9 +28,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     `;
     document.head.appendChild(style);
-
-    const updateSection = document.getElementById('updateRecord');
-    updateSection.style.display = 'none';
 
 
 	// JavaScript to toggle the visibility of the Update Existing Record section
