@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function() {
 					alert('No record found for the provided Inspection number and email.');
 				}
 			})
-			.catch(error => console.error('Error fetching record:', error));
+			.catch(error => console.error('Error fetching record:', error))
 
 			.finally(() => spinner.style.display = 'none'); //hide spinner
 
@@ -211,7 +211,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		.catch(error => {
 			alert('There was a problem with your submission.');
 			console.error('Error:', error);
-		});
+		})
 
 		.finally(() => spinner.style.display = 'none'); // hide spinner
 
