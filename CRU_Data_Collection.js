@@ -26,11 +26,14 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     document.head.appendChild(style);
 
+    const updateSection = document.getElementById('updateRecord');
+    updateSection.style.display = 'none';
+
 
 	// JavaScript to toggle the visibility of the Update Existing Record section
 	document.getElementById('toggleUpdateRecord').addEventListener('click', function () {
-		const updateSection = document.getElementById('updateRecord');
-		if (updateSection.style.display === 'block') {
+		//const updateSection = document.getElementById('updateRecord');
+		if (updateSection.style.display === 'none') {
 		    updateSection.style.display = 'block';
 		} else {
 		    updateSection.style.display = 'none';
