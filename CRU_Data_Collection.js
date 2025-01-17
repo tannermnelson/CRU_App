@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // Fetch both sites and troopers data
 
 
-	Create and add spinner to the page
+	//Create and add spinner to the page
     const spinner = document.createElement('div');
     spinner.id = 'spinner';
     spinner.style.display = 'none';
