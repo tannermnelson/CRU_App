@@ -3,20 +3,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 	//Create and add spinner to the page
-    const spinner = document.createElement('div');
-    spinner.id = 'spinner';
-    spinner.style.display = 'none';
-    spinner.style.position = 'fixed';
-    spinner.style.top = '50%';
-    spinner.style.left = '50%';
-    spinner.style.transform = 'translate(-50%, -50%)';
-    spinner.style.border = '8px solid #f3f3f3';
-    spinner.style.borderTop = '8px solid #3498db';
-    spinner.style.borderRadius = '50%';
-    spinner.style.width = '60px';
-    spinner.style.height = '60px';
-    spinner.style.animation = 'spin 1s linear infinite';
-    document.body.appendChild(spinner);
+    // const spinner = document.createElement('div');
+    // spinner.id = 'spinner';
+    // spinner.style.display = 'none';
+    // spinner.style.position = 'fixed';
+    // spinner.style.top = '50%';
+    // spinner.style.left = '50%';
+    // spinner.style.transform = 'translate(-50%, -50%)';
+    // spinner.style.border = '8px solid #f3f3f3';
+    // spinner.style.borderTop = '8px solid #3498db';
+    // spinner.style.borderRadius = '50%';
+    // spinner.style.width = '60px';
+    // spinner.style.height = '60px';
+    // spinner.style.animation = 'spin 1s linear infinite';
+    // document.body.appendChild(spinner);
 
     // Spinner animation styles
     const style = document.createElement('style');
