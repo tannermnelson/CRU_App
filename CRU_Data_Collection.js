@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	    let inspectionInput = document.getElementById("inspection_number");
 	
 	    if (downloadType === "Training") {
-	        let randomNumber = "T" + Math.floor(100000 + Math.random() * 900000);
+	        let randomNumber = Math.floor(100000 + Math.random() * 900000);
 	        inspectionInput.value = randomNumber;
 	        inspectionInput.readOnly = true;
 	    } else {
