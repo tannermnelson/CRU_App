@@ -29,6 +29,20 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     document.head.appendChild(style);
 
+	function handleDownloadTypeChange() {
+	    let downloadType = document.getElementById("downloadType").value;
+	    let inspectionInput = document.getElementById("inspection_Number");
+	
+	    if (downloadType === "Training") {
+	        let randomNumber = "T" + Math.floor(100000 + Math.random() * 900000);
+	        inspectionInput.value = randomNumber;
+	        inspectionInput.readOnly = true;
+	    } else {
+	        inspectionInput.value = "";
+	        inspectionInput.readOnly = false;
+	    }
+	}
+
 
 	// JavaScript to toggle the visibility of the Update Existing Record section
 	document.getElementById('toggleUpdateRecord').addEventListener('click', function () {
