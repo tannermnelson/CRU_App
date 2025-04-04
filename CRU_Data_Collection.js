@@ -30,8 +30,8 @@ document.addEventListener('DOMContentLoaded', function() {
     document.head.appendChild(style);
 
 	function handleDownloadTypeChange() {
-	    let downloadType = document.getElementById("downloadType").value;
-	    let inspectionInput = document.getElementById("inspection_Number");
+	    let downloadType = document.getElementById("download_type").value;
+	    let inspectionInput = document.getElementById("inspection_number");
 	
 	    if (downloadType === "Training") {
 	        let randomNumber = "T" + Math.floor(100000 + Math.random() * 900000);
