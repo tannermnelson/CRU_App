@@ -1,8 +1,25 @@
+function handleDownloadTypeChange() {
+    let downloadType = document.getElementById("download_type").value;
+    let inspectionInput = document.getElementById("inspection_number");
+
+    if (downloadType === "Training Download") {
+        let randomNumber = Math.floor(100000 + Math.random() * 900000);
+        inspectionInput.value = randomNumber;
+        inspectionInput.readOnly = true;
+    } else {
+        inspectionInput.value = "";
+        inspectionInput.readOnly = false;
+    }
+}
+
+
 document.addEventListener('DOMContentLoaded', function() {
 
 	const updateSection = document.getElementById('updateRecord');
     updateSection.style.display = 'none';
 
+
+	
 	//Create and add spinner to the page
     const spinner = document.createElement('div');
     spinner.id = 'spinner';
