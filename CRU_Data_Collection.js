@@ -1,25 +1,8 @@
-function handleDownloadTypeChange() {
-    let downloadType = document.getElementById("download_type").value;
-    let inspectionInput = document.getElementById("inspection_number");
-
-    if (downloadType === "Training Download") {
-        let randomNumber = Math.floor(100000 + Math.random() * 900000);
-        inspectionInput.value = randomNumber;
-        inspectionInput.readOnly = true;
-    } else {
-        inspectionInput.value = "";
-        inspectionInput.readOnly = false;
-    }
-}
-
-
 document.addEventListener('DOMContentLoaded', function() {
 
 	const updateSection = document.getElementById('updateRecord');
     updateSection.style.display = 'none';
 
-
-	
 	//Create and add spinner to the page
     const spinner = document.createElement('div');
     spinner.id = 'spinner';
@@ -45,20 +28,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     `;
     document.head.appendChild(style);
-
-	function handleDownloadTypeChange() {
-	    let downloadType = document.getElementById("download_type").value;
-	    let inspectionInput = document.getElementById("inspection_number");
-	
-	    if (downloadType === "Training Download") {
-	        let randomNumber = Math.floor(100000 + Math.random() * 900000);
-	        inspectionInput.value = randomNumber;
-	        inspectionInput.readOnly = true;
-	    } else {
-	        inspectionInput.value = "";
-	        inspectionInput.readOnly = false;
-	    }
-	}
 
 
 	// JavaScript to toggle the visibility of the Update Existing Record section
@@ -192,10 +161,10 @@ document.addEventListener('DOMContentLoaded', function() {
 		 }
 
 		 // Validate dmv number
-		 if (!/^\d{7}[A-Z]{2}$/.test(dmv349_report_number)) {
-		 	alert('The DMV Report Number must be formatted properly.')
-		 	return; // Exit if validation fails
-		 }
+		 //if (!/^\d{7}[A-Z]{2}$/.test(dmv349_report_number)) {
+		 	//alert('The DMV Report Number must be formatted properly.')
+		 	//return; // Exit if validation fails
+		 //}
 		
 		// Prepare the form data for submission
 		const formData = {
