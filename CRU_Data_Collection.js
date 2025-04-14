@@ -180,7 +180,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		 //if (!/^\d{7}[A-Z]{2}$/.test(dmv349_report_number)) {
 		 	//alert('The DMV Report Number must be formatted properly.')
 		 	//return; // Exit if validation fails
-		 }
+		 //}
 		
 		// Prepare the form data for submission
 		const formData = {
