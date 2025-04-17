@@ -3,7 +3,7 @@ function handleDownloadTypeChange() {
      let inspectionInput = document.getElementById("inspection_number");
  
      if (downloadType === "Training Download") {
-         let randomNumber = Math.floor(100000 + Math.random() * 900000);
+         let randomNumber = Math.floor(100000 + Math.random() * 9000000);
          inspectionInput.value = randomNumber;
          inspectionInput.readOnly = true;
      } else {
