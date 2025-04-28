@@ -158,7 +158,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 		//Validate the form fields
-		if (!operator || !technician || !email || !troop || !date || !time || !district || !inspection_number || !dmv349_report_number || !equipment || !software || !engine_make || !engine_model || !engine_year || !warrant || !unit_type || !download_type || !notes || !post_crash_trailer_used) {
+		if (!operator || !technician || !email || !troop || !date || !time || !district || !inspection_number || !dmv349_report_number || !equipment || !software || !engine_make || !engine_model || !engine_year || !warrant || !unit_type || !download_type  || !post_crash_trailer_used) {
 			alert('Please fill in all required fields.');
 		 	return; // Exit if any field is empty
 		 }
@@ -182,7 +182,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		 	//return; // Exit if validation fails
 		 //}
 		
-		// Prepare the form data for submission
+		// Prepare the form data for submission 250428010CA
 		const formData = {
 			operator,
 			technician,
