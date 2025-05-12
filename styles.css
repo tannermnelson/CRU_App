@@ -89,7 +89,58 @@ select {
     transform: scale(1);
 }
 
+/* ======================= */
+/*        FOOTER STYLES        */
+/* ======================= */
 
+footer { /* Footer styling */
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px 0;
+    font-size: 0.85em;
+    color: #666;
+}
+
+.footer-content { /* Footer content container */
+}
+
+.powered-by-line, .logo-line, .contact-line { /* Footer lines alignment */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.contact-line { /* Last line, no margin */
+    margin-bottom: 0;
+}
+
+.powered-by-line em { /* Emphasized powered by */
+}
+
+.logo-line { /* Logo alignment */
+}
+
+.footer-icon { /* Icon inside footer */
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+    flex-shrink: 0;
+}
+
+.footer-logo { /* Logo image inside footer */
+    max-height: 30px;
+    vertical-align: middle;
+}
+
+.contact-line a { /* Contact links */
+    color: #0056b3;
+    text-decoration: none;
+}
+
+.contact-line a:hover { /* Hover for contact links */
+    text-decoration: underline;
+}
 
 
 
